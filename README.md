@@ -10,14 +10,14 @@ Phase I - Proposal
 Page 1:
 Title of your project goes here (e.g. “Othello”)
 
-Project Summary – This section should be a description of your project. It should address things such as the operation of the game/simulation, rules, number of players, artificial intelligence, special features you want to implement, etc. Summaries that go into a good amount of detail are usually ½ to ¾ pages in length.
+Project Summary – 
+Archer
+The game is based on the popular game genre known as a platformer. Games that fall under the platform genre consists of the player going through obstacles such as block and enemies in order to reach a certain destination in the game. The point of the game is that the user takes control of the archer, the person in the middle with a bow and arrows. With the archer, the user must be able to reach the Golden Arrow which is located at the top of the map in order to complete the game and achieve victory. However the user must make it through obstacles such as the soldiers placed throughout the map. The user can either shoot arrows by pressing space, but it is good to note that there are only a limited amount of arrows that the user can have the archer shoot(30), or the user can decide to ignore them and not make contact with them and jump on the blocks to make their way to the Golden Arrow. The soldiers are placed throughout the map to make it more difficult the player to get the arrow and require to be careful with their actions. In order to help the user keep track of the amount of arrows left, there is a display on the screen which keeps track of how many more arrows they can shoot. The user is given the ability to make the archer jump,move to the left or right, and shoot arrows, in order to achieve the goal of the game.
+
 
 Page 2:
-Screenshot(s) – Here you will sketch screenshot(s) for different views of your project. You may hand draw or electronically draw your screenshot, but it must be self-drawn. Please do not include downloaded picts or jpgs. Include multiple diagrams if your project will present the user with different screens. Include a brief description of each screenshot.
+Screenshot(s) –
 
-IMPORTANT: View this proposal as a way to REALLY plan out your project (not as another
-HW assignment). The more thorough you are in the planning stages, the fewer roadblocks,
-programming issues, and bugs you will face when you actually begin coding. Starting to code from the ground up without a good plan in place is quintessential cowboy programming. And that is not a good thing, in the Wild West or anywhere else.
 
  
 Phase II – Java Program
@@ -47,20 +47,17 @@ The Final Project is due on your assigned lottery date. THERE WILL BE A 15% dedu
 
  
 Phase III – Project Submission Guidelines
-By 8am on the morning of your presentation, you should submit your entire file on GitHub’
-
-In addition, create a Notes file that should include a “Description”, “How to play”, and “Interesting Features” text that will be used to describe your project when it is posted to the website. See the example below.
-
-Example:
 Description:
-My game is simple single player pong game with an AI controlled opponent and a scoreboard. It is similar to the original pong except for a few key features. The objective of the game is to get as many points as possible by getting the ball past the opposing player. The game ends when the total score has reached 9. The AI difficulty can be changed in order to change the difficulty level. The game starts with a simple window asking whether or not you would like to play; after that there is an eight second timer then the game begins.
+The game is a basic platform game just like that of Super Mario. However some key differences is that you can shoot at the enemies to eliminate them and you take the form of an archer. To reach the end of the game, the archer must grab the Golden Arrow by going up to it and touch. Once the player has reached the arrow then the game is finished and prompts the player with a “You Win” screen, indicating that the player has beaten the game. The player can utilize their arrows but must use them as purposefully as possible to ensure victory.
 
-How to play:
-Click the "DOWN" button in order to get the paddle to move down, and click the "UP" button in order to get the ball to move up.
+How To Play:
+Click “Left” to move left and “Right” to move right. Press the “Up” key to jump. Press down the “Space” key to shoot an arrow.
 
 Interesting Features:
-1. The AI's difficulty setting and the AI's algorithm are both set by only two numbers. The difficulty setting is a number between 60 - 99 and the higher the number the harder it is to defeat the AI. The second number is a random number between 1 - 100, should the difficulty setting be higher than this number than the AI is allowed to move towards the paddle, but if the random number be higher than the difficulty setting, the paddle remains in place.
-2. Constant motion of the paddle is another key feature of my game. The paddle is designed to be in almost constant motion in order to add another level of difficulty to the game. The paddle only stops at the bottom and top of the screen. This prevents the paddle from leaving the game entirely.
+The player can do somewhat of a double jump when the archer jumps on a block
+
+The player only has a limited amount of arrow(30) that they can use before they run out
+
 
 
  
