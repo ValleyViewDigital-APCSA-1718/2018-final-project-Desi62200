@@ -1,0 +1,145 @@
+import greenfoot.*;
+
+public class Archer extends Actor
+{
+    private int movement = 0;//how fast the player is moving
+    private int moveStop = 1;//how fast the player decreases in terms of moving
+    private boolean isNotJumping;//determines if the player is in the air
+    private int airTime = 17;//how long the player is in the air
+    private int moveSpeed = 5;//how fast the player is
+    private int direction = 1; // 1 means right and -1 means left
+    private int arrow;// status of arrow
+    private int numberOfArrows=30;//max number of arrows the player has
+    private String arrowDisplay;
+    private GreenfootImage rightSprite = new GreenfootImage("archerR1.png");
+    private GreenfootImage leftSprite = new GreenfootImage("archer1.png");
+    private GreenfootImage shootRSprite=new GreenfootImage("archerR15.png");
+    private GreenfootImage shootLSprite=new GreenfootImage("archer15.png");
+    private GreenfootImage skull=new GreenfootImage("skull.png");
+          
+
+    public void act() 
+    {
+        move();
+        isFalling();
+        shooting();
+        checkEnemy();
+        getArrow();
+        arrow --;        
+    }   
+    public void getArrow()//what happens when the player gets the Golden Arrow
+    {
+        if(isTouching(Arrow.class))
+        {
+         Actor arrowA=getOneIntersectingObject(Arrow.class);
+         getWorld().removeObject(arrowA);
+         Greenfoot.setWorld(new WinScreen());
+        }
+    }
+    public void checkEnemy()//what happens when the player makes contact with a Soldier
+    {
+        if(isTouching(Soldier.class))
+        {
+            setImage(skull);
+            Greenfoot.stop();
+        }
+    }
+    
+    public void move()//player controls
+    {
+        if(Greenfoot.isKeyDown("right"))
+        {
+            direction = 2;
+            setImage(rightSprite);
+            setLocation(getX()+moveSpeed, getY());   
+        }
+        if(Greenfoot.isKeyDown("left"))
+        {
+            direction = -2;
+            setImage(leftSprite);
+            setLocation(getX()-moveSpeed, getY()); 
+        }
+        if(Greenfoot.isKeyDown("up") && isNotJumping == false)
+        {
+            jump();
+        }
+    }    
+         
+    
+    public void gravity()// brings the player down when he's in the air
+    {
+        setLocation(getX(), getY() + movement);
+        if(movement <=5)
+        {
+            movement = movement + moveStop;
+        }
+        isNotJumping = true;
+    }
+
+    
+
+    public void stand(Actor dirt)//makes sure the player stands on the platform
+    {
+        int height = dirt.getImage().getHeight();
+        int dist = dirt.getY() - (height + getImage().getHeight())/2;
+        setLocation(getX(), dist);
+        isNotJumping = false;
+    }
+    public boolean Standing()//checks if the player is standing
+    {
+        
+        Actor dirt = getOneObjectAtOffset(0, getImage().getHeight()/2, Layout.class);
+        if(dirt == null)
+        {
+            isNotJumping = true;
+            return false;
+        }
+        else
+        {
+            stand(dirt);
+            return true;
+        }
+    }
+    public void isFalling()//checks if the character is falling
+    {
+        if(Standing())
+        {
+            movement = 0;
+        }
+        else
+        {
+            gravity();
+        }
+    }
+
+    public void jump()//allows the player to jump
+    {
+        movement = movement - airTime;
+        isNotJumping = true;
+        gravity();
+    }
+
+   
+
+    public boolean shooting()//allows the player to shoot arrows if conditions are met
+    {
+        if(Greenfoot.isKeyDown("space") && arrow <= 0 && direction ==2&& numberOfArrows>=0)
+        {           
+            setImage(shootRSprite);           
+            getWorld().addObject(new Right(), getX(), getY());
+            arrow = 20;
+            numberOfArrows--;
+            return true;
+        }
+        if(Greenfoot.isKeyDown("space") && arrow <= 0 && direction ==-2 && numberOfArrows>=0)
+        {           
+            setImage (shootLSprite);            
+            getWorld().addObject(new Left(), getX(), getY());
+            arrow = 20;
+            numberOfArrows--;
+            return true;
+        }
+        return false;
+    }
+   
+}
