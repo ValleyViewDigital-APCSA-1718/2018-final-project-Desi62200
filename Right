@@ -1,0 +1,12 @@
+import greenfoot.*;
+
+public class Right extends Attack
+{
+    
+    
+    public void act() 
+    {
+        setLocation(getX() + 12, getY());
+        eliminate();
+    }    
+}
