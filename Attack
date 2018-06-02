@@ -1,0 +1,55 @@
+import greenfoot.*;
+
+public class Attack extends Actor
+{
+    
+    
+    public void act() //shooting mechanic
+    {
+        eliminate();
+    }    
+    
+    public void takeOutArrow()//removes arrow from the scren
+    {
+       Actor hit = getOneIntersectingObject(Layout.class);
+       if(getX() <1 || getX() >= getWorld().getWidth() -1)
+       {
+           getWorld().removeObject(this);
+        }
+        else if(hit != null)
+        {
+            getWorld().removeObject(this);
+        }
+    }
+    
+    public boolean arrowShot(Class arrow)//checks if arrow is shot
+    {
+        Actor shotArrow = getOneObjectAtOffset(0,0, arrow);
+        return shotArrow !=null;
+    }
+    
+    public void shot(Class arrow)
+    {
+        Actor shotArrow = getOneObjectAtOffset(0,0, arrow);
+        if(shotArrow != null)
+        {
+            getWorld().removeObject(shotArrow);
+            
+        }
+    }
+    
+    public void eliminate()//takes out soldier if hit by arrow
+    {
+        if(arrowShot(Soldier.class))
+        {
+            shot(Soldier.class);
+            getWorld().removeObject(this);
+        }
+        else
+        {
+            takeOutArrow();
+        }
+    }
+    
+    
+}
