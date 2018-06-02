@@ -1,0 +1,31 @@
+import greenfoot.Greenfoot;
+
+public class Castle extends Map
+{
+    //layout for blocks on map
+    public void layout()
+    {
+        layout = new String[] { "                         ",
+                             "                   r     ",
+                             "                 ppp     ",
+                             "            pp           ",
+                             "     s                   ",
+                             "     pp                  ",
+                             "                         ",
+                             "             pp s        ",
+                             "                pp       ",
+                             "        pp         pp    ",
+                             "                         ",
+                             "           f  s          ",
+                             "   s         pppp        ",
+                             "  ppppp                  ",
+                             "                ff       ",
+                             "                         ",
+                             "                         ",
+                             "    s         a          ",
+                             "bbbbbbbbbbbbbbbbbbbbbbbbb" };
+
+    }
+    
+    
+}
