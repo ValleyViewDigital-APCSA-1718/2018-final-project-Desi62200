@@ -1,0 +1,35 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Desi Ramirez
+ * Period 5
+ * APCSA, Rioux
+ * May 29,2018
+ */
+public class WinScreen extends Map
+{
+    //WIN page if the game is completed
+    public void layout()
+    {
+        layout = new String[] { "                         ",
+                             "                         ",
+                             "                         ",
+                             "                         ",
+                             "   f    f   fff   f   f  ",
+                             "    f  f  ff   ff f   f  ",
+                             "     ff   ff   ff f   f  ",
+                             "     f    ff   ff f   f  ",
+                             "    f       fff    fff   ",
+                             "                         ",
+                             "  f     f     f f ff   f ",
+                             "   f   f f   f  f f f  f ",
+                             "    f f   f f   f f  f f ",
+                             "     f     f    f f   ff ",
+                             "                         ",
+                             "                         ",
+                             "                         ",
+                             "                         ",
+                             " sssssb    a    b sssss  " };
+    }
+    
+}
