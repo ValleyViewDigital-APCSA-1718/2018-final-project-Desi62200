@@ -1,0 +1,54 @@
+import greenfoot.*;
+
+
+public class Soldier extends Actor
+{        
+    
+      
+    
+    private int height = getImage().getHeight()/2;
+    private int width = getImage().getWidth()/2;   
+    private int movement = 1; 
+   GreenfootImage soldierL1 = new GreenfootImage("soldierL1.png");
+   GreenfootImage soldier1 = new GreenfootImage("soldier1.png");       
+    public void act() 
+    {       
+        dontFall();
+        move();              
+    }    
+    
+  
+    public void dontFall()//prevents the soldier from falling off edge
+    {
+        if(getX() < 1 || getX() > getWorld().getWidth())
+        {
+            movement *= -1;
+        }
+    }   
+    
+    public void move()//gives the soldier capabalities of moving back and forth
+    {
+        Actor surface = getOneObjectAtOffset(width, height, Layout.class);
+        if(surface == null)
+        {
+            movement *= -1; 
+            width *= -1; 
+        }
+        else
+        {
+            move(movement);
+        }
+    }
+    
+    
+     
+     
+    
+    
+    
+    
+   
+    
+    
+    
+}
