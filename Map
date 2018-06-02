@@ -1,0 +1,43 @@
+import greenfoot.*;
+
+public abstract class Map extends World
+{
+    String[] layout;
+    //places blocks based on string input subclass
+    public Map()
+    {
+        super(800, 600, 1);
+        
+        layout();
+        for (int i=0; i<layout.length; i++) 
+        for (int k=0; k<layout[i].length(); k++)
+            {
+                int block = "abpsrf".indexOf(""+layout[i].charAt(k));
+                if (block < 0) continue;
+                Actor space = null;
+                if (block == 0) 
+                {space = new Archer();
+                }
+                else if (block == 1) {
+                    space = new Dirt();
+                }
+                else if (block == 2) {
+                    space = new Stone();
+                }
+                else if (block == 3){ 
+                    space = new Soldier();
+                }
+                else if (block == 4){ 
+                    space = new Arrow();
+                }     
+               else if (block == 5) {
+                   space = new Metal();
+                }
+                addObject(space, 16+k*32, 16+i*32);
+        }
+    }
+
+    public void layout() {}
+
+    
+}
