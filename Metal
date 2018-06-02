@@ -1,0 +1,8 @@
+import greenfoot.*;
+
+public class Metal extends Layout
+{
+    
+    
+}
+
